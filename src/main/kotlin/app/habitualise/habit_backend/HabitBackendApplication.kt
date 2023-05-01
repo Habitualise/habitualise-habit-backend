@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class HabitBackendApplication
 
 fun main(args: Array<String>) {
-	runApplication<HabitBackendApplication>(*args)
+    runApplication<HabitBackendApplication>(*args)
 }
