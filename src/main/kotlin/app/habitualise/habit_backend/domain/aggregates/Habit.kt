@@ -6,14 +6,24 @@ import java.util.*
 
 class Habit(
     override val id: UUID,
-    var name: String,
-    var active: Boolean = true,
-    var daysDue: List<Int>,
-    var daysAchieved: List<LocalDate> = LinkedList<LocalDate>(),
-    val owner: String,
-    val creationDate: LocalDate = LocalDate.now()
+    name: String,
+    daysDue: List<Int>,
+    owner: String,
+    daysAchieved: List<LocalDate> = mutableListOf(),
+    active: Boolean = true,
+    creationDate: LocalDate = LocalDate.now()
 ) :
     AggregateRoot<UUID>() {
-
-
+    var name: String = name
+        private set
+    var daysDue: List<Int> = daysDue
+        private set
+    var owner: String = owner
+        private set
+    val daysAchieved: List<LocalDate> = daysAchieved
+        get() = Collections.unmodifiableList(field)
+    var active: Boolean = active
+        private set
+    var creationDate: LocalDate = creationDate
+        private set
 }

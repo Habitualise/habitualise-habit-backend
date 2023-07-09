@@ -36,10 +36,10 @@ class MongoHabitRepository(private val mongoRepo: SpringDataMongoHabitRepository
         return HabitDTO(
             habit.id,
             habit.name,
-            habit.active,
             habit.daysDue,
-            habit.daysAchieved,
             habit.owner,
+            habit.daysAchieved,
+            habit.active,
             habit.creationDate
         )
     }
@@ -48,10 +48,10 @@ class MongoHabitRepository(private val mongoRepo: SpringDataMongoHabitRepository
         return Habit(
             habitDTO.id,
             habitDTO.name,
-            habitDTO.active,
             habitDTO.daysDue,
-            habitDTO.daysAchieved,
             habitDTO.owner,
+            habitDTO.daysAchieved,
+            habitDTO.active,
             habitDTO.creationDate
         )
     }
