@@ -1,5 +1,8 @@
 package app.habitualise.habit_backend.presentation.validation
 
+import com.fasterxml.jackson.annotation.JsonProperty
+
 data class ValidationErrorResponse(
-    val violations: MutableList<Violation> = mutableListOf()
+    @JsonProperty("validation_errors")
+    val validationErrors: MutableList<ValidationErrors> = mutableListOf()
 )

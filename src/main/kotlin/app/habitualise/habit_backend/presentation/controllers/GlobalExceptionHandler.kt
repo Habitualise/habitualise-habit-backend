@@ -1,7 +1,7 @@
 package app.habitualise.habit_backend.presentation.controllers
 
 import app.habitualise.habit_backend.presentation.validation.ValidationErrorResponse
-import app.habitualise.habit_backend.presentation.validation.Violation
+import app.habitualise.habit_backend.presentation.validation.ValidationErrors
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import org.springframework.http.HttpStatus
@@ -25,7 +25,7 @@ class GlobalExceptionHandler {
         for (fieldError in ex.bindingResult.fieldErrors) {
             val fieldName = toSnakeCase(fieldError.field)
             val errorMessage = fieldError.defaultMessage
-            response.violations.add(Violation(fieldName, errorMessage ?: "Invalid value"))
+            response.validationErrors.add(ValidationErrors(fieldName, errorMessage ?: "Invalid value"))
         }
         return response
     }
