@@ -21,6 +21,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("net.sizovs:pipelinr:0.8")
+    implementation("com.github.mvallim:java-fluent-validator:1.10.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
