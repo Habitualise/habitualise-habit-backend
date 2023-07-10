@@ -16,7 +16,7 @@ class PipelinrConfiguration {
     ): Pipeline {
         return Pipelinr()
             .with(CommandHandlers { commandHandlers.stream() })
-            .with(NotificationHandlers { notificationHandlers.stream() })
-            .with(Command.Middlewares { middlewares.orderedStream() })
+            .with(NotificationHandlers { notificationHandlers.stream() }) // Note there are no Notifications/ Handlers yet
+            .with(Command.Middlewares { middlewares.orderedStream() }) // Note there are no Middlewares yet
     }
 }
