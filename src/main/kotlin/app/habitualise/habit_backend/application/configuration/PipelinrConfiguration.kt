@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration
 
 
 @Configuration
-internal class PipelinrConfiguration {
+class PipelinrConfiguration {
     @Bean
     fun pipeline(
         commandHandlers: ObjectProvider<Command.Handler<*, *>?>,
