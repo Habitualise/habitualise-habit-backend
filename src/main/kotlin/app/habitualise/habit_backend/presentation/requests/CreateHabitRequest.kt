@@ -11,6 +11,7 @@ data class CreateHabitRequest(
     @field:Size(min = 1, max = 7, message = "Habit must have a valid list of days due between 1 to 7 days")
     @JsonProperty("days_due")
     val daysDue: List<Int>,
+    @field:NotEmpty(message = "Owner must not be empty")
     @field:Email(message = "Owner must be a valid email address")
     val owner: String
 )
