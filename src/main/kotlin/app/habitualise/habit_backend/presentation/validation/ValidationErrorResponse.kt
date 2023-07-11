@@ -4,5 +4,5 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 data class ValidationErrorResponse(
     @JsonProperty("validation_errors")
-    val validationErrors: MutableList<ValidationErrors> = mutableListOf()
+    val validationErrors: MutableList<ValidationError> = mutableListOf()
 )
