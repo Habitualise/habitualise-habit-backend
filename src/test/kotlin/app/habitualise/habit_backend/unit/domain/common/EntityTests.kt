@@ -34,5 +34,4 @@ class EntityTests {
     }
 }
 
-class TestEntity<UUID>(id: UUID) : Entity<UUID>(id) {
-}
+class TestEntity<UUID>(id: UUID) : Entity<UUID>(id)
