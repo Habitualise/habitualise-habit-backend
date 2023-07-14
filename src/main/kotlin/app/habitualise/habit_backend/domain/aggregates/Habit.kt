@@ -5,7 +5,7 @@ import java.time.LocalDate
 import java.util.*
 
 class Habit(
-    override val id: UUID,
+    id: UUID,
     name: String,
     daysDue: List<Int>,
     owner: String,
@@ -13,7 +13,7 @@ class Habit(
     active: Boolean = true,
     creationDate: LocalDate = LocalDate.now()
 ) :
-    AggregateRoot<UUID>() {
+    AggregateRoot<UUID>(id) {
     var name: String = name
         private set
     var daysDue: List<Int> = daysDue
