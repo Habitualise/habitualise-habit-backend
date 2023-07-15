@@ -37,4 +37,27 @@ class CreateHabitHandlerTests {
 
         verify { habitRepositoryMock.save(any()) }
     }
+
+    @Test
+    fun `Given a create habit command, when handle is invoked and an exception is thrown, return an error result`() {
+        // Arrange
+        val habitRepositoryMock = mockk<HabitRepository>(relaxed = true)
+        val command = CreateHabitCommand(
+            "Test Habit",
+            listOf(1, 2, 3),
+            "Test Owner"
+        )
+
+        val exceptionToThrow = Exception()
+        every { habitRepositoryMock.save(any()) } throws exceptionToThrow
+
+        val handler = CreateHabitCommandHandler(habitRepositoryMock)
+
+        // Act
+        val result = handler.handle(command)
+
+        // Assert
+        result.shouldNotBeNull()
+        result.exceptionOrNull().shouldBeEqualTo(exceptionToThrow)
+    }
 }
