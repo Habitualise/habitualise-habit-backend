@@ -1,4 +1,4 @@
-package app.habitualise.habit_backend.presentation.requests
+package app.habitualise.habit_backend.web.requests
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import jakarta.validation.constraints.Email

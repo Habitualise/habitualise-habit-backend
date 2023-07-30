@@ -1,9 +1,9 @@
-package app.habitualise.habit_backend.presentation.controllers
+package app.habitualise.habit_backend.web.controllers
 
 import an.awesome.pipelinr.Pipeline
 import app.habitualise.habit_backend.application.commands.create_habit_command.CreateHabitCommand
 import app.habitualise.habit_backend.domain.exceptions.DomainException
-import app.habitualise.habit_backend.presentation.requests.CreateHabitRequest
+import app.habitualise.habit_backend.web.requests.CreateHabitRequest
 import jakarta.validation.Valid
 import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import java.util.*
 
 @RestController
 @RequestMapping("/api/v1/habits")
