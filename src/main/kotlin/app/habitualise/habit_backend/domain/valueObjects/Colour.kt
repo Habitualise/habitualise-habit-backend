@@ -20,5 +20,14 @@ enum class Colour(val value: String) {
             }
             throw InvalidColourValueException("Colour with value: $value does not exist")
         }
+
+        fun tryFromName(value: String): Boolean {
+            for (colour in values()) {
+                if (colour.value == value) {
+                    return true
+                }
+            }
+            return false
+        }
     }
 }
