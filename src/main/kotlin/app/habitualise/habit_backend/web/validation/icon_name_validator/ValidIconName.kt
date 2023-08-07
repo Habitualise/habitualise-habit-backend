@@ -8,7 +8,7 @@ import kotlin.reflect.KClass
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [IconNameValidator::class])
 annotation class ValidIconName(
-    val message: String = "Title must be valid icon name",
+    val message: String = "Invalid icon name",
     val groups: Array<KClass<out Any>> = [],
     val payload: Array<KClass<out Payload>> = []
 )
