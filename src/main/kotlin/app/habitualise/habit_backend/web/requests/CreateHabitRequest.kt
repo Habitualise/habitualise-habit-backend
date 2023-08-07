@@ -1,6 +1,8 @@
 package app.habitualise.habit_backend.web.requests
 
+import app.habitualise.habit_backend.web.validation.colour_name_validator.ValidColourName
 import app.habitualise.habit_backend.web.validation.days_of_week_validator.ValidDaysOfWeek
+import app.habitualise.habit_backend.web.validation.icon_name_validator.ValidIconName
 import com.fasterxml.jackson.annotation.JsonProperty
 import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotEmpty
@@ -19,5 +21,13 @@ data class CreateHabitRequest(
 
     @field:NotEmpty(message = "Owner must not be empty")
     @field:Email(message = "Owner must be a valid email address")
-    val owner: String
+    val owner: String,
+
+    @field:NotEmpty(message = "Habit must have an icon name")
+    @field:ValidIconName(message = "Habit must have a valid icon name")
+    val iconName: String,
+
+    @field:NotEmpty(message = "Habit must have a colour")
+    @field:ValidColourName(message = "Habit must have a valid colour")
+    val colour: String
 )

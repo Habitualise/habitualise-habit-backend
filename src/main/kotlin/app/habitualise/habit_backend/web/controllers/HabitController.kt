@@ -21,7 +21,13 @@ class HabitController(private val pipeline: Pipeline) {
     @PostMapping
     fun createHabit(@Valid @RequestBody createHabitRequest: CreateHabitRequest): ResponseEntity<String> {
         val createHabitResult =
-            CreateHabitCommand(createHabitRequest.name, createHabitRequest.daysDue, createHabitRequest.owner)
+            CreateHabitCommand(
+                createHabitRequest.name,
+                createHabitRequest.daysDue,
+                createHabitRequest.owner,
+                createHabitRequest.iconName,
+                createHabitRequest.colour
+            )
                 .execute(pipeline)
         if (createHabitResult.isSuccess) {
             return ResponseEntity(createHabitResult.getOrNull().toString(), HttpStatus.CREATED)
