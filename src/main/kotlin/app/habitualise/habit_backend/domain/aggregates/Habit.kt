@@ -2,6 +2,7 @@ package app.habitualise.habit_backend.domain.aggregates
 
 import app.habitualise.habit_backend.domain.common.AggregateRoot
 import app.habitualise.habit_backend.domain.exceptions.InvalidDaysDueAssignedException
+import app.habitualise.habit_backend.domain.valueObjects.Style
 import java.time.LocalDate
 import java.util.*
 
@@ -10,6 +11,7 @@ class Habit(
     name: String,
     daysDue: List<Int>,
     owner: String,
+    style: Style,
     daysAchieved: List<LocalDate>,
     active: Boolean,
     creationDate: LocalDate
@@ -25,11 +27,12 @@ class Habit(
         }
     }
 
-    constructor(id: UUID, name: String, daysDue: List<Int>, owner: String) : this(
+    constructor(id: UUID, name: String, daysDue: List<Int>, owner: String, style: Style) : this(
         id,
         name,
         daysDue,
         owner,
+        style,
         mutableListOf(),
         true,
         LocalDate.now()
@@ -40,6 +43,8 @@ class Habit(
     var daysDue: List<Int> = daysDue
         private set
     var owner: String = owner
+        private set
+    var style: Style = style
         private set
     val daysAchieved: List<LocalDate> = daysAchieved
         get() = Collections.unmodifiableList(field)

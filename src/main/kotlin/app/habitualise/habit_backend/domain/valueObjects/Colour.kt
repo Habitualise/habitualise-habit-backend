@@ -12,7 +12,7 @@ enum class Colour(val value: String) {
     GREY("grey");
 
     companion object {
-        fun fromValue(value: String): Colour {
+        fun fromName(value: String): Colour {
             for (colour in values()) {
                 if (colour.value == value) {
                     return colour
