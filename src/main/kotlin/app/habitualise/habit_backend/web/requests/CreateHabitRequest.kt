@@ -14,8 +14,8 @@ data class CreateHabitRequest(
     val name: String,
 
     @field:NotNull(message = "Habit must have a list of days due")
-    @field:Size(min = 1, max = 7, message = "Habit must have a valid list of days due between 1 to 7 days")
-    @field:ValidDaysOfWeek(message = "Habit must have a valid list of days due which contains no duplicates")
+    @field:Size(min = 1, max = 7, message = "Habit must have a valid list of days due of length between 1 to 7")
+    @field:ValidDaysOfWeek(message = "Habit must have a valid list of days with each value between 1 to 7")
     @JsonProperty("days_due")
     val daysDue: List<Int>,
 

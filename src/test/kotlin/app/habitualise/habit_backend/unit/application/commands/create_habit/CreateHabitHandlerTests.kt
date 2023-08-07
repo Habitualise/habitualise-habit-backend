@@ -19,7 +19,9 @@ class CreateHabitHandlerTests {
         val command = CreateHabitCommand(
             "Test Habit",
             listOf(1, 2, 3),
-            "Test Owner"
+            "Test Owner",
+            "Test Icon",
+            "red"
         )
 
         var capturedHabit: Habit? = null
@@ -45,7 +47,9 @@ class CreateHabitHandlerTests {
         val command = CreateHabitCommand(
             "Test Habit",
             listOf(1, 2, 3),
-            "Test Owner"
+            "Test Owner",
+            "Test Icon",
+            "red"
         )
 
         val exceptionToThrow = Exception()
