@@ -9,6 +9,6 @@ import kotlin.reflect.KClass
 @Constraint(validatedBy = [DaysOfWeekValidator::class])
 annotation class ValidDaysOfWeek(
     val message: String = "{fieldName} contains duplicate day/s",
-    val groups: Array<KClass<*>> = [],
+    val groups: Array<KClass<out Any>> = [],
     val payload: Array<KClass<out Payload>> = []
 )
