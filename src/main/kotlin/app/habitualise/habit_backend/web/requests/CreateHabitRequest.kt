@@ -25,6 +25,7 @@ data class CreateHabitRequest(
 
     @field:NotEmpty(message = "Habit must have an icon name")
     @field:ValidIconName(message = "Habit must have a valid icon name")
+    @JsonProperty("icon_name")
     val iconName: String,
 
     @field:NotEmpty(message = "Habit must have a colour")
