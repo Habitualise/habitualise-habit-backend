@@ -4,7 +4,7 @@ import app.habitualise.habit_backend.domain.valueObjects.Colour
 import jakarta.validation.ConstraintValidator
 import jakarta.validation.ConstraintValidatorContext
 
-class ColourNameValidator : ConstraintValidator<ValidColourName, String?> {
+class ColourNameConstraintValidator : ConstraintValidator<ValidColourName, String?> {
     override fun isValid(colourName: String?, context: ConstraintValidatorContext?): Boolean {
         if (colourName == null) return false
         return Colour.tryFromName(colourName)

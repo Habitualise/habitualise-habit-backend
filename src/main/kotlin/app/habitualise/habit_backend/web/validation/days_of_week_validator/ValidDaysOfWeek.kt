@@ -6,7 +6,7 @@ import kotlin.reflect.KClass
 
 @Target(AnnotationTarget.FIELD, AnnotationTarget.VALUE_PARAMETER)
 @Retention(AnnotationRetention.RUNTIME)
-@Constraint(validatedBy = [DaysOfWeekValidator::class])
+@Constraint(validatedBy = [DaysOfWeekConstraintValidator::class])
 annotation class ValidDaysOfWeek(
     val message: String = "{fieldName} contains invalid values",
     val groups: Array<KClass<out Any>> = [],
