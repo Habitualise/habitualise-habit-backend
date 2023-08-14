@@ -6,5 +6,7 @@ import java.util.*
 data class CreateHabitCommand(
     val name: String,
     val daysDue: List<Int>,
-    val owner: String
+    val owner: String,
+    val iconName: String,
+    val colour: String
 ) : GenericCommand<UUID>

@@ -38,6 +38,7 @@ class MongoHabitRepository(private val mongoRepo: SpringDataMongoHabitRepository
             habit.name,
             habit.daysDue,
             habit.owner,
+            habit.style,
             habit.daysAchieved,
             habit.active,
             habit.creationDate
@@ -50,6 +51,7 @@ class MongoHabitRepository(private val mongoRepo: SpringDataMongoHabitRepository
             habitDTO.name,
             habitDTO.daysDue,
             habitDTO.owner,
+            habitDTO.style,
             habitDTO.daysAchieved,
             habitDTO.active,
             habitDTO.creationDate

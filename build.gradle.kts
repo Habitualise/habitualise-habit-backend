@@ -23,6 +23,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("net.sizovs:pipelinr:0.8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.amshove.kluent:kluent:1.73")
+    testImplementation("io.mockk:mockk:1.13.5")
 }
 
 tasks.withType<KotlinCompile> {

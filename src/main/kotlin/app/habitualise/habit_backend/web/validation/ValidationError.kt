@@ -1,4 +1,4 @@
-package app.habitualise.habit_backend.presentation.validation
+package app.habitualise.habit_backend.web.validation
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

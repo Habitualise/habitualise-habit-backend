@@ -1,7 +1,6 @@
 package app.habitualise.habit_backend.domain.common
 
-abstract class Entity<ID> {
-    abstract val id: ID
+abstract class Entity<TId>(val id: TId) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

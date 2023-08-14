@@ -1,7 +1,7 @@
-package app.habitualise.habit_backend.presentation.controllers
+package app.habitualise.habit_backend.web.controllers
 
-import app.habitualise.habit_backend.presentation.validation.ValidationErrorResponse
-import app.habitualise.habit_backend.presentation.validation.ValidationError
+import app.habitualise.habit_backend.web.validation.ValidationErrorResponse
+import app.habitualise.habit_backend.web.validation.ValidationError
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import org.springframework.http.HttpStatus
