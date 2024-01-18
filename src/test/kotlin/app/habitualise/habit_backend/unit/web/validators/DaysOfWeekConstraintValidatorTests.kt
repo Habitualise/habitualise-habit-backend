@@ -5,10 +5,12 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 class DaysOfWeekConstraintValidatorTests {
+
+    val validator = DaysOfWeekConstraintValidator()
+
     @Test
     fun `Given a valid days of week, when isValid is invoked, then return true`() {
         // Arrange
-        val validator = DaysOfWeekConstraintValidator()
         val daysOfWeek = listOf(1, 2, 3)
 
         // Act

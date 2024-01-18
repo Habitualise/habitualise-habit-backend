@@ -5,10 +5,12 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 class ColourNameConstraintValidatorTests {
+
+    val validator = ColourNameConstraintValidator()
+
     @Test
     fun `Given a valid colour name, when isValid is invoked, then return true`() {
         // Arrange
-        val validator = ColourNameConstraintValidator()
         val colourName = "red"
 
         // Act
@@ -21,7 +23,6 @@ class ColourNameConstraintValidatorTests {
     @Test
     fun `Given an invalid colour name, when isValid is invoked, then return false`() {
         // Arrange
-        val validator = ColourNameConstraintValidator()
         val colourName = "invalid"
 
         // Act
