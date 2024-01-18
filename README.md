@@ -11,7 +11,6 @@
 - [x] Scaffold DDD
 - [x] Add Habit aggregate
 - [ ] Create Test Suite
-- [ ] Add HabitStyle aggregate
 - [ ] Add all endpoints
 - [ ] Add auth
 - [ ] Add CI pipeline
