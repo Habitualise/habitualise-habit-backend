@@ -5,9 +5,8 @@ import jakarta.validation.ConstraintValidator
 import jakarta.validation.ConstraintValidatorContext
 import org.springframework.beans.factory.annotation.Autowired
 
-class IconNameConstraintValidator : ConstraintValidator<ValidIconName, String?> {
-    @Autowired
-    private lateinit var iconNameValidator: MaterialCommunityIconNameValidator
+class IconNameConstraintValidator(private val iconNameValidator: MaterialCommunityIconNameValidator) :
+    ConstraintValidator<ValidIconName, String?> {
     override fun isValid(iconName: String?, context: ConstraintValidatorContext?): Boolean {
         if (iconName == null) return false
         return iconNameValidator.isValid(iconName)
