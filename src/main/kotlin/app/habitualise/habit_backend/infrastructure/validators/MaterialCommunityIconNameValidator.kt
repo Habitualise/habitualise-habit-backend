@@ -18,10 +18,10 @@ class MaterialCommunityIconNameValidator : IconNameValidator {
         restTemplate.messageConverters.add(converter)
     }
 
-    private val url =
+    private val ICON_LIST_URL =
         "https://raw.githubusercontent.com/oblador/react-native-vector-icons/master/glyphmaps/MaterialCommunityIcons.json"
     private val responseType = object : ParameterizedTypeReference<Map<String, Int>>() {}
-    private val responseEntity = restTemplate.exchange(url, HttpMethod.GET, null, responseType)
+    private val responseEntity = restTemplate.exchange(ICON_LIST_URL, HttpMethod.GET, null, responseType)
     private val iconMap = responseEntity.body?.also {
         if (it.isEmpty()) {
 //            log.warn("The response body is empty!") Add logging when we have a logger
